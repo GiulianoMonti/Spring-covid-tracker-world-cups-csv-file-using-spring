@@ -11,23 +11,18 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    @Autowired
-    CoronavirusDataService coronavirusDataService;
 
+    @Autowired
+    CoronavirusDataService coronaVirusDataService;
 
     @GetMapping("/")
     public String home(Model model) {
-        List<LocationStats> allStats = coronavirusDataService.getAllStats();
+        List<LocationStats> allStats = coronaVirusDataService.getAllStats();
         int totalReportedCases = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();
         int totalNewCases = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
-
-//        for (LocationStats stat : allStats) {
-//            int latestTotalCases = stat.getLatestTotalCases();
-//            totalCases += latestTotalCases;
-//        }
         model.addAttribute("locationStats", allStats);
         model.addAttribute("totalReportedCases", totalReportedCases);
-        model.addAttribute("totalNewCases", totalReportedCases);
+        model.addAttribute("totalNewCases", totalNewCases);
 
         return "home";
     }
