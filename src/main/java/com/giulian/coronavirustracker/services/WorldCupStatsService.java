@@ -50,7 +50,7 @@ public class WorldCupStatsService {
                     worldCupStats.setWon(Integer.parseInt(cup.get("Won")));
                     worldCupStats.setDrawn(Integer.parseInt(cup.get("Drawn")));
                     worldCupStats.setLost(Integer.parseInt(cup.get("Offside")));
-                    
+
                     newStats.add(worldCupStats);
 
 
