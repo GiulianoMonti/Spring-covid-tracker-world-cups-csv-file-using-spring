@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>WORLD CUP STATS TEST APP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+          crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container"></div>
+
+<h1>world cup stats testing</h1>
+
+<p>COPA MUNDIAL</p>
+
+
+</div>
+<table class="table">
+    <tr>
+        <th>Year</th>
+        <th>Team</th>
+        <th>ISO</th>
+        <th>Goals for</th>
+        <th>Goals against</th>
+        <th>Penalties</th>
+        <th>Matches</th>
+        <th>Shots on goal</th>
+        <th>Shots wide</th>
+        <th>Free kicks</th>
+        <th>Offside</th>
+        <th>Corners</th>
+        <th>Won</th>
+        <th>Drawn</th>
+        <th>Offside</th>
+
+
+    </tr>
+    <tr th:each="world : ${worldCupStats}">
+        <td th:text="${world.year}"></td>
+        <td th:text="${world.team}"></td>
+        <td th:text="${world.ISO}">0</td>
+        <td th:text="${world.goalsFor}">0</td>
+        <td th:text="${world.goalsAgainst}">0</td>
+        <td th:text="${world.penalties}">0</td>
+        <td th:text="${world.matches}">0</td>
+        <td th:text="${world.shotsOnGoal}">0</td>
+        <td th:text="${world.shotsWide}">0</td>
+        <td th:text="${world.freeKicks}">0</td>
+        <td th:text="${world.offside}">0</td>
+        <td th:text="${world.corners}">0</td>
+        <td th:text="${world.won}">0</td>
+        <td th:text="${world.drawn}">0</td>
+        <td th:text="${world.lost}">0</td>
+
+
+    </tr>
+</table >
+</body>
+</html>
